@@ -175,7 +175,7 @@ SET FOREIGN_KEY_CHECKS = 1;
 6.redis 
 7.mysql（mybatis-plus）
 ### 项目流程
-1.启动类进行启动，开启` @PostConstruct`，调用spiderHandle
+1.启动类进行启动，开启` @PostConstruct`，调用spiderHandle    
 2.spiderHandle
 在spiderHandle中，使用线程池处理任务，线程池工厂和拒绝策略由自己确定；同时引入countDownLatch进行线程同步，使主线程等待线程池的所有任务结束，便于计时。
 3.SpiderService处理爬取数据，进行解析，同时批量插入到数据库中
