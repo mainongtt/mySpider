@@ -167,17 +167,18 @@ SET FOREIGN_KEY_CHECKS = 1;
 ![image](https://user-images.githubusercontent.com/52461848/166427009-0826cc52-0f0f-4dfb-8627-f201fcb25d54.png)
 
 ### 技术点
-1.SpringBoot 
-2.SpringMVC
-3.HttpClinet
-4.Jsoup
-5.多线程（线程池）
-6.redis 
-7.mysql（mybatis-plus）
+1.SpringBoot     
+2.SpringMVC    
+3.HttpClinet    
+4.Jsoup    
+5.多线程（线程池）     
+6.redis     
+7.mysql（mybatis-plus）    
 ### 项目流程
 1.启动类进行启动，开启` @PostConstruct`，调用spiderHandle    
 2.spiderHandle
-在spiderHandle中，使用线程池处理任务，线程池工厂和拒绝策略由自己确定；同时引入countDownLatch进行线程同步，使主线程等待线程池的所有任务结束，便于计时。
+在spiderHandle中，使用线程池处理任务，线程池工厂和拒绝策略由自己确定；同时引入countDownLatch进行线程同步，使主线程等待线程池的所有任务结束，便于计时。    
+
 3.SpiderService处理爬取数据，进行解析，同时批量插入到数据库中
 4.GoodsInfoMapper
 使用mybatis-plus生成得到
